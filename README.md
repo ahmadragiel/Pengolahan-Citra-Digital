@@ -4,7 +4,7 @@
 ---
 
 ## 👤 Tentang Project
-Project ini dibuat sebagai bagian dari tugas mata kuliah pengolahan citra digital.  
+Project ini dibuat sebagai bagian dari tugas mata kuliah Pengolahan Citra Digital.  
 Tujuan utama dari project ini adalah untuk memahami serta mengimplementasikan teknik perbaikan citra digital, khususnya dalam mengurangi noise dan meningkatkan kualitas visual gambar.
 
 Selain sebagai tugas akademik, project ini juga menjadi bagian dari pengembangan portofolio pribadi di bidang teknologi.
@@ -28,7 +28,7 @@ Citra digital adalah representasi visual dalam bentuk data numerik yang dapat di
 
 ### 2. Noise pada Citra
 Noise adalah gangguan yang muncul pada citra sehingga menurunkan kualitas gambar.  
-Beberapa jenis noise:
+Beberapa jenis noise yang digunakan dalam project ini:
 - Gaussian Noise  
 - Salt & Pepper Noise  
 - Speckle Noise  
@@ -53,7 +53,7 @@ Kekurangan:
 ---
 
 #### 🔹 Frequency Domain
-Metode ini bekerja dengan mengubah citra ke domain frekuensi.
+Metode ini bekerja dengan mengubah citra ke domain frekuensi menggunakan Transformasi Fourier.
 
 Contoh:
 - Low-pass filter  
@@ -63,53 +63,64 @@ Kelebihan:
 - Lebih fleksibel dalam memisahkan noise  
 
 Kekurangan:
-- Lebih kompleks  
+- Lebih kompleks dibanding metode spasial  
 
----asdasd
+---
 
 ## ⚙️ Implementasi
 
 Tools yang digunakan:
 - Python  
-- OpenCV / scikit-image  
+- OpenCV  
 - NumPy  
+- Matplotlib  
+- scikit-image  
 
 Langkah-langkah:
-1. Membaca citra  
-2. Menambahkan noise (simulasi)  
-3. Menerapkan metode perbaikan  
-4. Membandingkan hasil  
+1. Membaca citra dari folder `assets`  
+2. Menambahkan noise (salt & pepper)  
+3. Menerapkan median filter (spatial domain)  
+4. Menerapkan low-pass filter (frequency domain)  
+5. Menyimpan dan menampilkan hasil  
 
 ---
 
 ## 🖼️ Hasil
 
-| Sebelum | Sesudah |
-|--------|--------|
-| (gambar noise) | (gambar hasil) |
+Berikut perbandingan hasil pengolahan citra:
+
+| Original | Noise |
+|---------|-------|
+| ![](assets/input.jpg) | ![](assets/noise.jpg) |
+
+| Spatial (Median) | Frequency (Low-pass) |
+|------------------|----------------------|
+| ![](assets/spatial.jpg) | ![](assets/frequency.jpg) |
 
 ---
 
 ## 📊 Analisis
-- Metode yang digunakan mampu mengurangi noise pada citra  
-- Terjadi sedikit penurunan detail pada beberapa bagian gambar  
-- Pemilihan metode sangat mempengaruhi hasil akhir  
+- Noise berhasil ditambahkan menggunakan metode salt & pepper  
+- Median filter cukup efektif dalam mengurangi noise tanpa merusak terlalu banyak detail  
+- Low-pass filter pada domain frekuensi mampu menghaluskan citra, namun menghasilkan gambar yang lebih blur  
+- Setiap metode memiliki kelebihan dan kekurangan tergantung kebutuhan  
 
 ---
 
 ## 🚀 Kesimpulan
-Perbaikan citra digital merupakan proses penting dalam pengolahan citra untuk meningkatkan kualitas visual.
+Perbaikan citra digital merupakan proses penting dalam meningkatkan kualitas visual suatu gambar.
 
 Dari project ini dapat disimpulkan bahwa:
-- Tidak ada metode yang sempurna  
-- Diperlukan keseimbangan antara pengurangan noise dan menjaga detail  
+- Tidak ada metode yang benar-benar sempurna  
+- Pemilihan metode harus disesuaikan dengan jenis noise  
+- Terdapat trade-off antara mengurangi noise dan mempertahankan detail  
 
 ---
 
 ## 💬 Refleksi Pribadi
 Project ini bukan hanya tentang menyelesaikan tugas, tetapi juga tentang proses belajar dan pengembangan diri.
 
-Saya percaya bahwa selama masih memiliki kesempatan, saya harus terus belajar, mencoba, dan berkembang.
+Melalui project ini, saya belajar bahwa pemahaman konsep dan praktik langsung sangat penting dalam bidang teknologi.
 
 > “Bertarunglah sehancur-hancurnya selagi muda, sampai tak tersisa sedikitpun kerusakan di masa depanmu.”
 
